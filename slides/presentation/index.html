@@ -1,0 +1,518 @@
+<html>
+<head>
+    <meta charset="utf-8">
+
+    <title>Hand on react</title>
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css" id="theme">
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+        <section>
+            <h1>Hands on React</h1>
+            <h3>E-Biz</h3>
+        </section>
+        <section>
+            <h1>Objectives</h1>
+            <ul>
+                <li>
+                    Better understanding of the javascript nebula.
+                </li>
+                <li>
+                    Differenciate Node and browser.
+                </li>
+                <li>
+                    Differenciate library (react, redux) and framework (angular).
+                </li>
+                <li>
+                    Be able to launch your project to prod.
+                </li>
+                <li>
+                    Use webpack in "real case".
+                </li>
+                <li>
+                    Use React in "real case".
+                </li>
+                <li>
+                    Play with Redux.
+                </li>
+                <li>
+                    Be able to create a client application.
+                </li>
+            </ul>
+        </section>
+        <section>
+            <h1>Main rule</h1>
+            <p>
+            In javascript more than in any other language you should follow the rule "Make It Work, Make It Right, Make It Fast".
+            </p>
+            <p>
+                "Make it work" means it works for the users (in production).
+            </p>
+            <p>
+                Don't use React/redux/immutable.js/angular/angular2 if you don't need to.
+            </p>
+        </section>
+        <section>
+            <section>
+                <h1>History</h1>
+            </section>
+            <section>
+                <h1>Web Browser</h1>
+                <p>In 1993 the first web browser appear by National Center for Supercomputing Applications (NCSA). It's name is NCSA Mosaic</p>
+                <p>Many of the original Mosaic authors went on to work on Netscape Navigator. In 1994, Netscape Navigator was given the codename: Mozilla, for "Mosaic killer". Officially in use in 1998.</p>
+            </section>
+            <section>
+                <h1>Dynamic Language</h1>
+                <p>In order to have dynamic content Netscape wanted to have a "glue" language. They first approach Sun Microsystem to add Java into the browser.</p>
+                <p>But they finally wanted there own language and hire Brendan Eich for write it. He wrote one in 10 days.</p>
+            </section>
+            <section>
+                <h1>Javascript name</h1>
+                <p>The first name was Mocha, then LiveScript and then Javascript. The name evolved to respond to marketing strategies.</p>
+            </section>
+            <section>
+                <h1>Server Side Javascript</h1>
+                <p>Server-side scripting with "Netscape Enterprise Server" was created in December 1995 (Node.js, I am your father !).</p>
+            </section>
+            <section>
+                <h1>EcmaScript</h1>
+                <p>In November 1996, Netscape submitted JavaScript to Ecma International. It's first edition was in June 1997.</p>
+            </section>
+            <section>
+                <h1>DOM manipulation and Ajax</h1>
+                <p>DOM (Document Object Model). Ajax (asynchronous JavaScript and XML).</p>
+                <p>In 2006, manipulation of DOM between different web browsers is a mess. The community started to create library like jQuery or Prototype (for Ajax).</p>
+            </section>
+            <section>
+                <h1>Node.js</h1>
+                <p>In 2009 was create the first release of Node.js a server-side javascript runtime based on V8 javascript engine.</p>
+            </section>
+            <section>
+                <h1>MVC client side framework</h1>
+                <p>2010 is the begining MVC javascript framework such as:</p>
+                <ul>
+                    <li>Angular</li>
+                    <li>Ember</li>
+                    <li>Backbone</li>
+                    <li>Knockout</li>
+                </ul>
+            </section>
+            <section>
+                <h1>In 2017, Javascript hype?</h1>
+                <ul>
+                    <li>React</li>
+                    <li>Angular 2</li>
+                    <li>Vue.js</li>
+                    <li>Electron</li>
+                    <li>Nodejs</li>
+                    <li>NPM</li>
+                    <li>Commonjs</li>
+                    <li>Webpack</li>
+                    <li>Browserify</li>
+                    <li>Ractive</li>
+                    <li>Rollup</li>
+                    <li>Gobble</li>
+                    <li>Immutable.js</li>
+                    <li>ES6</li>
+                    <li>Babel</li>
+                    <li>Standard.js</li>
+                    <li>RxJS</li>
+                    <li>Cycle.js</li>
+                    <li>ELM</li>
+                    <li>Redux</li>
+                    <li>Ramda</li>
+                </ul>
+            </section>
+        </section>
+        <section>
+            <h1>Javascript</h1>
+            <p>"JavaScript is a high-level, dynamic, untyped, and interpreted programming language."</p>
+        </section>
+        <section>
+            <h1>Javascript Modules</h1>
+            <p>Module is the way to split our code. There is 3 type of modules in JS: AMD, CommonJs and ES modules.</p>
+        </section>
+        <section>
+            <h1>NodeJs</h1>
+            <p>Interpreter of Javascript, with library for creating server side applications in javascript.</p>
+        </section>
+        <section>
+            <h1>NPM</h1>
+            <p>Dependency manager for Javascript base on CommonJs modules.</p>
+        </section>
+        <section>
+            <h1>useful commands</h1>
+            <p>Install command will pull the dependency from npmjs.com repository and will install it in the local
+                node_modules.</p>
+            <pre><code class="hljs" data-trim contenteditable>
+npm install batman-dep
+                </code></pre>
+        </section>
+        <section>
+            <h1>useful commands</h1>
+            <p>run command will execute the script describe in package.json.</p>
+            <pre><code class="hljs" data-trim contenteditable>
+{
+  "name": "example1-environement",
+  "version": "1.0.0",
+  "description": "intall environement exercice",
+  "main": "index.js",
+  "scripts": {
+    "echo": "echo -e 'nothing to display, no script'"
+  },
+  "author": "jbpetit@excilys.com",
+  "license": "MIT"
+}
+                </code></pre>
+            <pre><code class="hljs" data-trim contenteditable>
+npm run echo
+                </code></pre>
+        </section>
+        <section>
+            <h1>Webpack 2</h1>
+            <p>Webpack self defines as a module bundler. It a tool that permit to build and package our application.
+                There is four important notion.</p>
+            <ul>
+                <li>entry - The entries point of your application.</li>
+                <li>output - Where webpack should output the code.</li>
+                <li>module - What kind of file webpack will load.</li>
+                <li>plugins - Enrich the build job with some plugins.</li>
+            </ul>
+        </section>
+        <section>
+            <h1>Webpack 2</h1>
+            <p>Config file example</p>
+            <pre><code class="hljs" data-trim contenteditable>
+var path = require("path");
+
+module.exports = { // This is just a commonJs Module
+    entry: {
+        app: ["./app.js"] // Entry point
+    },
+    output: {
+        path: path.resolve(__dirname, "package"), // Output dir
+        filename: "bundle.js"
+    },
+    module: {
+         // Load some modules
+    },
+    plugins: [
+         // Load some plugins
+    ]
+};
+            </code></pre>
+        </section>
+        <section>
+            <h1>Exercise 1</h1>
+        </section>
+        <section>
+            <h1>ES6</h1>
+            <p>ECMAScript 6 is the latest ECMAScript standard. It updates JS with necessary functionalities like arrows
+                function, class, const, modules and more !</p>
+            <p>ES6 is not fully implemented in browser. Chrome desktop implement 98% of ES6 today - 2017/04.</p>
+            <pre><code class="hljs" data-trim contenteditable>
+var odds = evens.map(v => v + 1); // arrow function
+class Test extends Mamama { // class
+    constructor(){...}
+    ...
+}
+const TEST = "TEST" ; // const
+import * as math from "lib/math"; // import
+            </code></pre>
+        </section>
+        <section>
+            <h1>Babel</h1>
+            <p>Is a javascript "transpiler" it allow developer to write ES6 that can run on every web browser. It
+                "transpile" also JSX, TypeScript and CoffeeScript.</p>
+            <pre><code class="hljs" data-trim contenteditable>
+[1,2,3].map(n => n + 1); // before babel
+
+[1,2,3].map(function(n) {
+  return n + 1; // after babel
+});
+            </code></pre>
+        </section>
+        <section>
+            <h1>ESLint</h1>
+            <p>"The pluggable linting utility for JavaScript and JSX"</p>
+            <pre><code class="hljs" data-trim contenteditable>
+module.exports = {
+entry: {},
+output: {},
+module: {
+    preLoaders: [
+         // ESLint loader goes here, DON'T forget to exclude node_modules or you will try to Lint vendor library.
+    ],
+    loaders: []
+},
+plugins: [],
+eslint: {
+    // if you do not use an .eslintrc.json file you can specify parameters here
+    rules: {
+        // Rules goes here
+    },
+    parserOptions: {
+        // options like the ecmascript version goes here
+        sourceType: 'module', // Tells ESLint that we use modules (like commonJs modules)
+    }
+}};
+            </code></pre>
+        </section>
+        <section>
+            <h1>Lodash</h1>
+            <p>"A modern JavaScript utility library delivering modularity, performance, & extras."</p>
+            <pre><code class="hljs" data-trim contenteditable>
+_.camelCase("__FOO_BAR__");
+// → "fooBar"
+_.uniq([2, 1, 2]);
+// → [2, 1]
+var users = [
+  { user: "barney", age: 36, active: true },
+  { user: "fred",   age: 40, active: false }
+];
+_.filter(users, 'active');
+// → objects for ['barney']
+            </code></pre>
+        </section>
+        <section>
+            <h1>UglifyJs2</h1>
+            <p>"UglifyJS is a JavaScript parser, minifier, compressor or beautifier toolkit."</p>
+            <p></p>
+        </section>
+        <section>
+            <h1>Exercise 2</h1>
+        </section>
+        <section>
+            <section>
+                <h1>React</h1>
+                <p>"A JAVASCRIPT LIBRARY FOR BUILDING USER INTERFACES"</p>
+            </section>
+            <section>
+                <h1>Advantages</h1>
+                <ul>
+                    <li>On prod @Facebook and @Instagram.</li>
+                    <li>Not a framework (like Angular).</li>
+                    <li>Can use as CommonJS module.</li>
+                    <li>Can write it with ES6.</li>
+                    <li>Really fast.</li>
+                    <li>Well documented.</li>
+                    <li>Easy to understand.</li>
+                </ul>
+            </section>
+            <section>
+                <h1>Drawbacks</h1>
+                <ul>
+                    <li>Not a framework.</li>
+                    <li>JSX (disturbing syntax).</li>
+                    <li>Write HTML with javascript means that robots (like those of Google) cannot read the documents.</li>
+                    <li>Component easier than Directive.</li>
+                    <li>Hard to well use.</li>
+                </ul>
+            </section>
+            <section>
+                <h1>React virtual DOM</h1>
+                <p>Guys @Facebook presumption are, DOM update is slow, but javascript is fast. With this principle, they have create a library that updates as little as possible the DOM. How ? By observing the changes in a JS (tree) representation of the DOM. Then with a diff algorithms, by updating only the part of the DOM's that needs one.</p>
+                <img data-src="https://risingstack-blog.s3-eu-west-1.amazonaws.com/2015/04/react-js-tutorial-2.png">
+            </section>
+            <section>
+                <h1>Create an element</h1>
+                <pre><code class="hljs" data-trim contenteditable>
+React.createElement('type of DOM element', props, 'text', childsElement...);
+                </code></pre>
+            </section>
+            <section>
+                <h2>Create an element NOTE</h2>
+                <p>To modify the real DOM react need to know which element have been modify. If you want React render an array of element, each element need a unique key to be able to know which element have been changed.</p>
+                <p>A key is just a property of a react element.</p>
+                <pre><code class="hljs" data-trim contenteditable>
+React.createElement('type of DOM element', {key: 'blabla'}, 'text', childsElement...);
+                </code></pre>
+            </section>
+            <section>
+                <h1>Render an element</h1>
+                <pre><code class="hljs" data-trim contenteditable>
+ReactDom.render(elementToRender, DOMelementWhereToRender);
+                </code></pre>
+            </section>
+        </section>
+        <section>
+            <h1>Exercice 3</h1>
+        </section>
+        <section>
+            <h1>React, Angular 2, Vue.js</h1>
+            <p>Library/framework of components.</p>
+            <p>Why ? Easier to maintain/split/work together.</p>
+        </section>
+        <section>
+            <h1>JSX</h1>
+            <p>Syntax for writing pseudo HTML in javascript. It replace the painful createElement.</p>
+            <img data-src="mypictures/JSXExample.JPG">
+        </section>
+        <section>
+            <h1> Create a component</h1>
+            <pre><code class="hljs" data-trim contenteditable>
+class BatmanComponent extends Component {
+    constructor(props) {
+        super(props);
+        this.jsPropertyToPass = props.jsPropertyToPass;
+    }
+
+    render() {
+        this.jsPropertyToPass.map(...);
+        return (
+                //JSX here.
+                );
+    }
+}
+            </code></pre>
+        </section>
+        <section>
+            <h1>Exercice 4</h1>
+        </section>
+        <section>
+            <h1>CSS</h1>
+            <p>In order to add style to your component use the JSX attribute 'className'.</p>
+        </section>
+        <section>
+            <h1>classNames</h1>
+            <p>Do not manipulate class names by yourself. Use classNames library.</p>
+            <pre><code class="hljs" data-trim contenteditable>
+var classNames = require('classnames');
+
+classNames('foo', 'bar'); // => 'foo bar'
+classNames({ 'foo-bar': true }); // => 'foo-bar'
+classNames('foo', { bar: true }); // => 'foo bar'
+            </code></pre>
+        </section>
+        <section>
+            <h1>React children components</h1>
+            <p>Imagine you want to create a nav bar on top of your application. You can either add a nav component in all page component of your application, or you can create a generic component that hold the nav bar and some other unknown component.</p>
+            <p>In react, to access/display/modify this list of unknown components, you will use.</p>
+            <pre><code class="hljs" data-trim contenteditable>
+this.props.children;
+            </code></pre>
+        </section>
+        <section>
+            <h1>React children components</h1>
+            <p>Do NOT map or loop on the list of children by yourself because it is an opaque structure. Instead use.</p>
+            <pre><code class="hljs" data-trim contenteditable>
+React.Children.forEach(object children, function fn [, object thisArg]);
+React.Children.map(object children, function fn [, object thisArg]);
+            </code></pre>
+        </section>
+        <section>
+            <h1>Stateless function</h1>
+            <p>For better performance and code clarity, if your component do not need a state (an instance) you can create a statless component.</p>
+            <pre><code class="hljs" data-trim contenteditable>
+function HelloMessage(props) {
+  return <div>Hello {props.name}</div>;
+}
+ReactDOM.render(<HelloMessage name="Sebastian" />, mountNode);
+
+// or with ES6 arrow function
+const HelloMessage = (props) => <div>Hello {props.name}</div>;
+ReactDOM.render(<HelloMessage name="Sebastian" />, mountNode);
+            </code></pre>
+        </section>
+        <section>
+          <h1>Exercise 5</h1>
+        </section>
+        <section>
+            <h1>React router</h1>
+            <p>"A complete routing library for React."</p>
+            <pre><code class="hljs" data-trim contenteditable>
+render((
+  <Router history={browserHistory}>
+    <Route path="/" component={App}>
+        <IndexRoute component={Home}/> // Default route
+        <Route path="users" component={Users} /> // Users route
+        <Route path="/users/:userId" component={User}/> // User route with user ID as parameter
+        <Route path="*" component={NoMatch}/> // When no match 404 page.
+    </Route>
+  </Router>
+), document.getElementById('root'))
+            </code></pre>
+        </section>
+        <section>
+            <section>
+              <h1>Lifecycle component methods</h1>
+            </section>
+            <section>
+                <h2>componentWillMount()</h2>
+                <p>Invoked once, immediately before the initial rendering occurs. If you call setState within this method, render() will see the updated state and will be executed only once despite the state change.</p>
+            </section>
+            <section>
+                <h2>componentWillUnmount()</h2>
+                <p>Invoked immediately before a component is unmounted from the DOM. Perform any necessary cleanup in this method, such as invalidating timers or cleaning up any DOM elements that were created in componentDidMount.</p>
+            </section>
+        </section>
+        <section>
+            <h1>Services and Superagent</h1>
+            <p>"SuperAgent is light-weight progressive ajax API crafted for flexibility, readability, and a low learning curve [...]"</p>
+            <pre><code class="hljs" data-trim contenteditable>
+request
+ .post('/api/pet')
+ .send({ name: 'Manny', species: 'cat' })
+ .set('X-API-Key', 'foobar')
+ .set('Accept', 'application/json')
+ .end(function(err, res){
+   if (err || !res.ok) {
+     alert('Oh no! error');
+   } else {
+     alert('yay got ' + JSON.stringify(res.body));
+   }
+ });
+            </code></pre>
+        </section>
+        <section>
+            <h1>Exercise 6</h1>
+        </section>
+        <section>
+          <h1>Redux</h1>
+          <p>"Redux is a predictable state container for JavaScript apps."</p>
+        </section>
+        <section>
+          <h1>Exercise 7</h1>
+        </section>
+    </div>
+</div>
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+<script>
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'slide',
+        dependencies: [
+            {
+                src: 'lib/js/classList.js', condition: function () {
+                return !document.body.classList;
+            }
+            },
+            {
+                src: 'plugin/markdown/marked.js', condition: function () {
+                return !!document.querySelector('[data-markdown]');
+            }
+            },
+            {
+                src: 'plugin/markdown/markdown.js', condition: function () {
+                return !!document.querySelector('[data-markdown]');
+            }
+            },
+            {
+                src: 'plugin/highlight/highlight.js', async: true, callback: function () {
+                hljs.initHighlightingOnLoad();
+            }
+            },
+            {src: 'plugin/zoom-js/zoom.js', async: true},
+            {src: 'plugin/notes/notes.js', async: true}
+        ]
+    });
+</script>
+</body>
+</html>
